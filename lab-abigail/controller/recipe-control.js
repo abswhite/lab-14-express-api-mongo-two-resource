@@ -12,7 +12,7 @@ exports.createItem = function(req, res, recipe) {
 
   new Recipe(req.body).save()
   .then(recipe => {
-    res.json(recipe);
+    return res.json(recipe);
   })
   .catch(err => res.status(400).send(err.message));
 };
